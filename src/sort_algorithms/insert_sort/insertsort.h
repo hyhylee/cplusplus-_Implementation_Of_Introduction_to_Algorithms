@@ -26,7 +26,7 @@ namespace IntrodunctionToAlgorithm
     /*!
     * \param begin : 待排序序列的起始迭代器（也可以是指向数组中某元素的指针）
     * \param end: 待排序序列的终止迭代器（也可以是指向数组中某元素的指针）
-    * \param compare: 一个用于排序的可调用对象，接受两个 Iterator对象，返回布尔值（若前者指向的对象小于后者指向的对象，则返回 true)
+    * \param compare: 一个可调用对象，可用于比较两个对象的小于比较，默认为std::less<T>
     * \return void
     *
     * - 插入排序思想，假设对数组A[p...r]排序：
@@ -34,16 +34,18 @@ namespace IntrodunctionToAlgorithm
     * - 时间复杂度 O(n^2)
     * - 原地排序
     */
-    template<typename Iterator> void insert_sort(Iterator begin,Iterator end,
-             bool(*compare)(Iterator  ,Iterator)=[](Iterator  small,Iterator big){return *small< *big;})
+    template<typename Iterator,typename Compare=std::less<typename std::iterator_traits<Iterator>::value_type>>
+                void insert_sort(const Iterator begin,const Iterator end,Compare compare=Compare())
      {
-            if(end-begin<=1)
+            //typedef typename std::iterator_traits<Iterator>::value_type T;// 迭代器指向对象的值类型
+            auto size=std::distance(begin,end);
+            if(size<=1)
                 return;
-            auto current=begin;
+            Iterator current=begin;
             while(++current!=end)
             {
                 auto small_next=current; //指向比*current小的元素中最大的那个元素
-                while(small_next!=begin && compare(current,small_next-1)) //current较小，则向前寻找插入的位置插入
+                while(small_next!=begin && compare(*current,*(small_next-1))) //current较小，则向前寻找插入的位置插入
                 {
                     small_next--;
                 }

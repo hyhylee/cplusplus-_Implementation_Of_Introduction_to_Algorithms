@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['quick_5fsort',['quick_sort',['../namespace_introdunction_to_algorithm_1_1_sort_algorithm.html#aacc87ff4087dcdcae65164f24b47aa7c',1,'IntrodunctionToAlgorithm::SortAlgorithm']]],
-  ['quicksort_2eh',['quicksort.h',['../quicksort_8h.html',1,'']]],
-  ['quicksort_5ftest_2eh',['quicksort_test.h',['../quicksort__test_8h.html',1,'']]]
+  ['bucket_5fsort',['bucket_sort',['../namespace_introdunction_to_algorithm_1_1_sort_algorithm.html#a3f2eccf64da97706fbd1025d54c5bfb3',1,'IntrodunctionToAlgorithm::SortAlgorithm']]],
+  ['bucketsort_2eh',['bucketsort.h',['../bucketsort_8h.html',1,'']]],
+  ['bucketsort_5ftest_2eh',['bucketsort_test.h',['../bucketsort__test_8h.html',1,'']]]
 ];

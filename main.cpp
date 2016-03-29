@@ -22,8 +22,12 @@
 #include"src/sort_algorithms/insert_sort/insertsort_test.h"
 #include"src/sort_algorithms/quick_sort/quicksort_test.h"
 #include"src/sort_algorithms/merge_sort/mergesort_test.h"
-using namespace std;
-
+#include"src/sort_algorithms/heap_sort/heapsort_test.h"
+#include"src/sort_algorithms/count_sort/countsort_test.h"
+#include"src/sort_algorithms/radix_sort/radixsort_test.h"
+#include"src/sort_algorithms/bucket_sort/bucketsort_test.h"
+#include"src/select_algorithms/randomized_select/randomizedselect_test.h"
+#include"src/select_algorithms/good_select/goodselect_test.h"
 int main(int argc,char** argv)
 {
     ::testing::InitGoogleTest(&argc,argv);
